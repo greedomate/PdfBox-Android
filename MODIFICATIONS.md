@@ -80,8 +80,22 @@ This is a fork of TomRoush's PdfBox-Android with modifications to replace the de
 - Added proper repository configuration examples in documentation
 
 **Files Changed**:
-- `library/build.gradle` - Updated compileOnly dependency from `com.gemalto.jp2:jp2-android:1.0.3` to `com.github.greedomate:JP2ForAndroid:1.0.3`
+- `library/build.gradle` - Updated compileOnly dependency from `com.gemalto.jp2:jp2-android:1.0.3` to `com.github.greedomate:JP2ForAndroid:c1bc02214b`
 - `README.md` - Updated JP2Android integration section with JitPack repository configuration
+
+### 6. JitPack Dependency Commit Hash Resolution (Phase 4.2)
+**Problem**: JitPack build failing because version tag `1.0.3` was not working, needed to use specific commit hash.
+
+**Solution**:
+- Identified that JP2ForAndroid fork works with commit hash `c1bc02214b` instead of version tag `1.0.3`
+- Updated all dependency references to use working commit hash for JitPack compatibility
+- Ensured both library module and sample module use consistent commit hash reference
+
+**Files Changed**:
+- `library/build.gradle` - Updated compileOnly dependency to use commit hash `c1bc02214b`
+- `sample/build.gradle` - Updated implementation dependency to use commit hash `c1bc02214b` 
+- `README.md` - Updated integration instructions to show correct commit hash
+- `NOTICE.txt` - Documented commit hash resolution in modification list
 
 ### 3. Legal Compliance
 - Maintained Apache 2.0 license compliance

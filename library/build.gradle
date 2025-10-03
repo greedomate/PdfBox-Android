@@ -96,7 +96,7 @@ dependencies {
     api "org.bouncycastle:bcpkix-jdk15to18:1.73"
     api "org.bouncycastle:bcutil-jdk15to18:1.73"
     // for jpeg2000 decode/encode
-    compileOnly 'com.github.greedomate:JP2ForAndroid:1.0.3'
+    compileOnly 'com.github.greedomate:JP2ForAndroid:c1bc02214b'
 
     // Test dependencies
     testImplementation 'junit:junit:4.13.2'

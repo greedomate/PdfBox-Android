@@ -57,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.greedomate:JP2ForAndroid:1.0.3'
+    implementation 'com.github.greedomate:JP2ForAndroid:c1bc02214b'
 }
 ```
 

@@ -5,7 +5,7 @@ Fork repository: https://github.com/greedomate/PdfBox-Android
 ===============================
 
 MODIFICATIONS MADE:
-- Fixed JCenter dependency issue by replacing com.gemalto.jp2:jp2-android:1.0.3 with com.github.greedomate:JP2ForAndroid:1.0.3
+- Fixed JCenter dependency issue by replacing com.gemalto.jp2:jp2-android:1.0.3 with com.github.greedomate:JP2ForAndroid:c1bc02214b
 - Removed deprecated jcenter() repository configurations from build.gradle
 - Added JitPack repository support (maven { url 'https://jitpack.io' })
 - Migrated Gradle repository configuration from build.gradle to settings.gradle using dependencyResolutionManagement
@@ -14,6 +14,7 @@ MODIFICATIONS MADE:
 - Updated sample/build.gradle dependencies to use forked JP2ForAndroid library
 - Updated library/build.gradle compileOnly dependency from JCenter to JitPack
 - Fixed README.md JP2Android integration instructions to use JitPack instead of JCenter
+- Updated all references to use working commit hash c1bc02214b instead of version tag 1.0.3
 
 Apache PDFBox
 Copyright 2014 The Apache Software Foundation
