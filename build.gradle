@@ -15,13 +15,7 @@ buildscript {
 allprojects {
     version = VERSION_NAME
 
-    repositories {
-//        Enable downloading snapshot versions
-//        maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots/" }
-        mavenCentral()
-        google()
-        // jcenter() // removed, using jitpack for jp2-android
-    }
+    // repositories moved to settings.gradle due to dependencyResolutionManagement
 
 //    Show more warnings if desired
 //    gradle.projectsEvaluated {

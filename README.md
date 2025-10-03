@@ -1,3 +1,15 @@
+📌 **FORK NOTICE**: This is a modified fork of PdfBox-Android
+=======================
+
+**🔗 Original Repository**: [TomRoush/PdfBox-Android](https://github.com/TomRoush/PdfBox-Android)  
+**🔗 This Fork**: [greedomate/PdfBox-Android](https://github.com/greedomate/PdfBox-Android)
+
+**📋 Modifications**: See [MODIFICATIONS.md](MODIFICATIONS.md) for detailed changes
+**⚖️ License**: Apache 2.0 (maintained from original)
+
+---
+👇 **Original Project Description** 👇
+
 PdfBox-Android
 ==============
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.tom-roush/pdfbox-android/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.tom-roush/pdfbox-android/)
