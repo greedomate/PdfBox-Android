@@ -48,10 +48,16 @@ Reading JPX Images
 
 Android does not come with native support for handling JPX images. These images can be read using the [JP2Android library](https://github.com/ThalesGroup/JP2ForAndroid). As JPX is not a common image format, this library is not included with PdfBox-Android by default. If the JP2Android library is not on the classpath of your application, JPX images will be ignored and a warning will be logged.
 
-To include the JP2Android library, add the following to your project's Gradle `dependencies` section. Note that this library is available in JCenter only, so you will need to add `jcenter()` to your repository list.
+To include the JP2Android library, add the following to your project's Gradle `dependencies` section. Note that this library is available via JitPack from our fixed fork, so you will need to add `maven { url 'https://jitpack.io' }` to your repository list.
 ```gradle
+repositories {
+    mavenCentral()
+    google()
+    maven { url 'https://jitpack.io' }
+}
+
 dependencies {
-    implementation 'com.gemalto.jp2:jp2-android:1.0.3'
+    implementation 'com.github.greedomate:JP2ForAndroid:1.0.3'
 }
 ```
 

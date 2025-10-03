@@ -12,6 +12,8 @@ MODIFICATIONS MADE:
 - Added jitpack.yml file for Java 11 compatibility in JitPack builds
 - Fixed repository conflict: FAIL_ON_PROJECT_REPOS mode for JitPack compatibility
 - Updated sample/build.gradle dependencies to use forked JP2ForAndroid library
+- Updated library/build.gradle compileOnly dependency from JCenter to JitPack
+- Fixed README.md JP2Android integration instructions to use JitPack instead of JCenter
 
 Apache PDFBox
 Copyright 2014 The Apache Software Foundation

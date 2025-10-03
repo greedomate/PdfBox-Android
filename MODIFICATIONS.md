@@ -70,6 +70,19 @@ This is a fork of TomRoush's PdfBox-Android with modifications to replace the de
 - `README.md` - Added fork attribution and modification links
 - `MODIFICATIONS.md` - Created detailed documentation (this file)
 
+### 5. Final Dependency Reference Cleanup (Phase 4.1)
+**Problem**: JitPack build failing due to remaining old dependency references in library module and documentation.
+
+**Solution**:
+- Updated library/build.gradle compileOnly dependency from JCenter to JitPack
+- Fixed README.md JP2Android integration instructions 
+- Ensured all dependency references point to forked JP2ForAndroid version
+- Added proper repository configuration examples in documentation
+
+**Files Changed**:
+- `library/build.gradle` - Updated compileOnly dependency from `com.gemalto.jp2:jp2-android:1.0.3` to `com.github.greedomate:JP2ForAndroid:1.0.3`
+- `README.md` - Updated JP2Android integration section with JitPack repository configuration
+
 ### 3. Legal Compliance
 - Maintained Apache 2.0 license compliance
 - Added proper BSD-2-Clause attribution for JP2ForAndroid dependency
