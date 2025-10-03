@@ -63,6 +63,7 @@ import com.tom_roush.pdfbox.util.filetypedetector.FileTypeDetector;
  */
 public final class PDImageXObject extends PDXObject implements PDImage
 {
+<<<<<<< HEAD
     // MODIFICATION: Removed SoftReference caching to fix bitmap recycling issues
     // Original code cached bitmaps which could be reclaimed by GC under memory pressure
     // This caused "Can't compress a recycled bitmap" errors on large PDFs
@@ -71,6 +72,14 @@ public final class PDImageXObject extends PDXObject implements PDImage
     
     private PDColorSpace colorSpace;
 
+=======
+    private SoftReference<Bitmap> cachedImage;
+    private PDColorSpace colorSpace;
+
+    // initialize to MAX_VALUE as we prefer lower subsampling when keeping/replacing cache.
+    private int cachedImageSubsampling = Integer.MAX_VALUE;
+
+>>>>>>> acf64258dd2ce575fea8ac4e51f57cca7f4945d7
     /**
      * current resource dictionary (has color spaces)
      */
@@ -484,6 +493,7 @@ public final class PDImageXObject extends PDXObject implements PDImage
     @Override
     public Bitmap getImage(Rect region, int subsampling) throws IOException
     {
+<<<<<<< HEAD
         // MODIFICATION: Removed SoftReference caching check to fix bitmap recycling issues
         // Original code checked cached bitmaps which could be reclaimed by GC under memory pressure
         // This caused "Can't compress a recycled bitmap" errors on large PDFs
@@ -495,6 +505,16 @@ public final class PDImageXObject extends PDXObject implements PDImage
         //         return cached;
         //     }
         // }
+=======
+        if (region == null && subsampling == cachedImageSubsampling && cachedImage != null)
+        {
+            Bitmap cached = cachedImage.get();
+            if (cached != null)
+            {
+                return cached;
+            }
+        }
+>>>>>>> acf64258dd2ce575fea8ac4e51f57cca7f4945d7
 
         // get RGB image w/o reference because applyMask might modify it, take long time and a lot of memory.
         final Bitmap image;
@@ -517,6 +537,7 @@ public final class PDImageXObject extends PDXObject implements PDImage
             image = SampledImageReader.getRGBImage(this, region, subsampling, getColorKeyMask());
         }
 
+<<<<<<< HEAD
         // MODIFICATION: Removed SoftReference caching assignment to fix bitmap recycling issues
         // Original code cached bitmaps which could be reclaimed by GC under memory pressure
         // This caused "Can't compress a recycled bitmap" errors on large PDFs
@@ -527,6 +548,15 @@ public final class PDImageXObject extends PDXObject implements PDImage
         //     cachedImageSubsampling = subsampling;
         //     cachedImage = new SoftReference<Bitmap>(image);
         // }
+=======
+        if (region == null && subsampling <= cachedImageSubsampling)
+        {
+            // only cache full-image renders, and prefer lower subsampling frequency, as lower
+            // subsampling means higher quality and longer render times.
+            cachedImageSubsampling = subsampling;
+            cachedImage = new SoftReference<Bitmap>(image);
+        }
+>>>>>>> acf64258dd2ce575fea8ac4e51f57cca7f4945d7
 
         return image;
     }
@@ -866,10 +896,14 @@ public final class PDImageXObject extends PDXObject implements PDImage
     {
         getCOSObject().setItem(COSName.COLORSPACE, cs != null ? cs.getCOSObject() : null);
         colorSpace = null;
+<<<<<<< HEAD
         // MODIFICATION: Removed cachedImage = null to fix bitmap recycling issues
         // Original code cleared cached bitmaps which could be reclaimed by GC under memory pressure
         // This caused "Can't compress a recycled bitmap" errors on large PDFs
         // cachedImage = null;
+=======
+        cachedImage = null;
+>>>>>>> acf64258dd2ce575fea8ac4e51f57cca7f4945d7
     }
 
     @Override

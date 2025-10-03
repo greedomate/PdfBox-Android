@@ -5,7 +5,7 @@ buildscript {
     repositories {
         mavenCentral()
         google()
-        jcenter() // jp2-android
+        // jcenter() // jp2-android - removed, using jitpack now
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.4.2'
@@ -20,7 +20,7 @@ allprojects {
 //        maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots/" }
         mavenCentral()
         google()
-        jcenter()
+        // jcenter() // removed, using jitpack for jp2-android
     }
 
 //    Show more warnings if desired
